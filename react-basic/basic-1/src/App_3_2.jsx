@@ -1,8 +1,10 @@
+import React, { useState } from "react";
+
 function Resume(props) {
-  let like = 0;
+  const [like, setLike] = useState(0);
 
   function handleClickLike() {
-    like += 1;
+    setLike(like + 1); // like = like + 1
     console.log(like);
   }
 

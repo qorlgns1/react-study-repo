@@ -1,14 +1,19 @@
+import React, { useState } from "react";
+
 function Resume(props) {
-  let like = 0;
+  const [like, setLike] = useState(0);
+  let heart = like % 2 === 1 ? "❤️" : "";
 
   function handleClickLike() {
-    like += 1;
-    console.log(like);
+    // setLike(like + 1)
+    // console.log(like);
+    setLike(like + 1);
   }
 
   return (
     <div>
       <button onClick={handleClickLike}>like : {like}</button>
+      <span>{heart ? heart : ""}</span>
     </div>
   );
 }
