@@ -1,0 +1,17 @@
+{
+  "data": {
+    "titleList": ["음료수", "사이즈"],
+    "groupList": [
+      { "title": "음료수", "options": ["콜라", "포카리스웨트"] },
+      { "title": "사이즈", "options": ["레귤러", "그란데", "벤티"] }
+    ],
+    "countList": [
+      { "combination": ["콜라", "레귤러"], "remainCount": 0 },
+      { "combination": ["콜라", "그란데"], "remainCount": 0 },
+      { "combination": ["콜라", "벤티"], "remainCount": 0 },
+      { "combination": ["포카리스웨트", "레귤러"], "remainCount": 3 },
+      { "combination": ["포카리스웨트", "그란데"], "remainCount": 0 },
+      { "combination": ["포카리스웨트", "벤티"], "remainCount": 1 }
+    ]
+  }
+}

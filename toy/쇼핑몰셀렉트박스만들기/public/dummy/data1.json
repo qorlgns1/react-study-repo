@@ -1,0 +1,26 @@
+{
+  "data": {
+    "titleList": ["종류 선택", "부위 선택", "포장 선택"],
+    "groupList": [
+      { "title": "종류 선택", "options": ["돼지", "소"] },
+      { "title": "부위 선택", "options": ["삼겹살", "목살"] },
+      { "title": "포장 선택", "options": ["선물 포장", "포장 안함"] }
+    ],
+    "countList": [
+      {
+        "combination": ["돼지", "삼겹살", "선물 포장"],
+        "remainCount": 3
+      },
+      {
+        "combination": ["돼지", "삼겹살", "포장 안함"],
+        "remainCount": 4
+      },
+      { "combination": ["돼지", "목살", "선물 포장"], "remainCount": 0 },
+      { "combination": ["돼지", "목살", "포장 안함"], "remainCount": 0 },
+      { "combination": ["소", "삼겹살", "선물 포장"], "remainCount": 0 },
+      { "combination": ["소", "삼겹살", "포장 안함"], "remainCount": 0 },
+      { "combination": ["소", "목살", "선물 포장"], "remainCount": 0 },
+      { "combination": ["소", "목살", "포장 안함"], "remainCount": 5 }
+    ]
+  }
+}
