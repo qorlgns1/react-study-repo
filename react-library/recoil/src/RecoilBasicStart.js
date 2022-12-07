@@ -11,6 +11,11 @@ const textState = atom({
   default: "", // default value (aka initial value)
 });
 
+export const textStateAtom2 = atom({
+  key: "textState", // unique ID (with respect to other atoms/selectors)
+  default: "", // default value (aka initial value)
+});
+
 const charCountState = selector({
   key: "charCountState", // unique ID (with respect to other atoms/selectors)
   get: ({ get }) => {

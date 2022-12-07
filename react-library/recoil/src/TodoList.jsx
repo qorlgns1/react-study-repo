@@ -6,6 +6,8 @@ import {
   useRecoilValue,
   useSetRecoilState,
 } from "recoil";
+import { textStateAtom1 } from "./atom1";
+import { textStateAtom2 } from "./RecoilBasicStart";
 
 const todoListState = atom({
   key: "todoListState",
@@ -112,9 +114,14 @@ function TodoList() {
 }
 
 export default function App() {
+  const [textState1, setTextState1] = useRecoilState(textStateAtom1);
+  const [textState2, setTextState2] = useRecoilState(textStateAtom2);
+
   return (
     <RecoilRoot>
       <TodoList />
+      <div>{textState1}11</div>
+      <div>{textState2}22</div>
     </RecoilRoot>
   );
 }
