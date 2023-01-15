@@ -77,6 +77,10 @@ function App() {
   }, [show]);
 
   const handleOnClick = () => {
+    setTimeout(() => {
+      console.log("setTimeout");
+    }, 0);
+
     setShow((prev) => {
       return !prev;
     });
