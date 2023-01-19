@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { authService } from "firebaseSetup";
 import {
   createUserWithEmailAndPassword,
+  getAuth,
+  GithubAuthProvider,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 
 const Auth = () => {
@@ -41,6 +45,34 @@ const Auth = () => {
   };
   const toggleAccount = () => setNewAccount((prev) => !prev);
 
+  const handleSocialLogin = async (e) => {
+    let provider;
+    let result;
+    let credential;
+    const {
+      target: { name },
+    } = e;
+    if (name === "google") {
+      provider = new GoogleAuthProvider();
+      result = await signInWithPopup(authService, provider);
+      credential = GoogleAuthProvider.credentialFromResult(result);
+    } else {
+      provider = new GithubAuthProvider();
+      result = await signInWithPopup(authService, provider);
+      credential = GithubAuthProvider.credentialFromResult(result);
+    }
+
+    console.log("result", result);
+    // The signed-in user info.
+    const user = result.user;
+    console.log("user", user);
+
+    console.log("credential", credential);
+    const token = credential.accessToken;
+
+    console.log("token", token);
+  };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -70,8 +102,12 @@ const Auth = () => {
         {newAccount ? "Sign In" : "Create Account"}
       </span>
       <div>
-        <button>Continue with Google</button>
-        <button>Continue with Github</button>
+        <button name="google" onClick={handleSocialLogin}>
+          Continue with Google
+        </button>
+        <button name="github" onClick={handleSocialLogin}>
+          Continue with Github
+        </button>
       </div>
     </div>
   );
