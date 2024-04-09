@@ -71,7 +71,7 @@ function HomePageContent() {
                 </DataHunger>
               </li>
               <li>
-                <DataHunger suspense duration='8s' tag='menu_orders'>
+                <DataHunger suspense duration='2.1s' tag='menu_orders'>
                   Orders
                 </DataHunger>
               </li>
